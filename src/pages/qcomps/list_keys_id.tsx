@@ -16,9 +16,20 @@ function getImageUrl(imageId: string) {
   return "https://i.imgur.com/" + imageId + "s.jpg"
 }
 export default function List() {
-  const listItems = people.map(person =>
-    <li>
+  // using map to loop through the array of people and render a list item for each one
+  // To get rid of the error, I'm using the person.id as the key for each list item
+  // using the getImageUrl function to get the image url for each person
+  const listItems = people.map((person) => (
+    <li key={person.id}>
+     
+      <img
+        src={getImageUrl(person.imageId)}
+        alt={person.name}
+        width={70}
+        height={70}
+      />
     </li>
-  );
+  ));
+  
   return <ul>{listItems}</ul>;
 }

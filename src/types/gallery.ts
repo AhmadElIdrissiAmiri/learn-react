@@ -1,4 +1,4 @@
-interface Scientist {
+export interface Scientist {
     name: string;
     imageId: string;
     profession: string;

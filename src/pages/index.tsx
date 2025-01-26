@@ -6,6 +6,7 @@ import Profile from './components/profile'
 
 export default function Home() {
   return (
-    <Profile />
+   // <Profile />
+   <div>hello</div>
   )
 }
