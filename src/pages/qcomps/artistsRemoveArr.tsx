@@ -10,7 +10,8 @@ export default function List() {
   const [artists, setArtists] = useState(
     initialArtists
   );
-
+// using filter to remove an item from the array  instead of splice 
+// and setting back the artist array again using setArtists to update the state
   return (
     <>
       <h1>Inspiring sculptors:</h1>
@@ -19,7 +20,7 @@ export default function List() {
           <li key={artist.id}>
             {artist.name}{' '}
             <button onClick={() => {
-              artists.splice(artist.id, 1)
+              setArtists(artists.filter(a => a.id !== artist.id))
             }}>
               Delete
             </button>

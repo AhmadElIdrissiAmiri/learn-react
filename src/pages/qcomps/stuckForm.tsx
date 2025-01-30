@@ -1,18 +1,24 @@
+import { useState } from "react";
+
 export default function Form() {
-  let firstName = '';
-  let lastName = '';
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+// we need to use setFirstName and setLastName to update the state of the form
+// and we need to use the handleFirstNameChange and handleLastNameChange functions to update the state of the form
+// without the setFirstName and setLastName functions the form will not update
 
   function handleFirstNameChange(e: { target: { value: string; }; }) {
-    firstName = e.target.value;
+    setFirstName(e.target.value);
   }
 
   function handleLastNameChange(e: { target: { value: string; }; }) {
-    lastName = e.target.value;
+    setLastName(e.target.value);
   }
-
+// we need to use the handleReset 
+// function to reset the state of the form using the SerFirstName and setLastName functions
   function handleReset() {
-    firstName = '';
-    lastName = '';
+    setFirstName(''); 
+    setLastName('');
   }
 
   return (

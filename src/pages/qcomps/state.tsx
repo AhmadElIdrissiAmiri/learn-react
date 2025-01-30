@@ -4,9 +4,12 @@ import { sculptureList } from '../../data/data';
 export default function Gallery() {
   const [index, setIndex] = useState(0);
   const [showMore, setShowMore] = useState(false);
-
+// we need to check the length of the sculptureList array to prevent the index 
+// from going out of bounds this way we don't have to worry about the index
   function handleNextClick() {
+    if(index < sculptureList.length - 1) {
     setIndex(index + 1);
+    }
   }
 
   function handleMoreClick() {
